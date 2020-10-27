@@ -1,11 +1,85 @@
 
-
 window.addEventListener('load', () => {
-    const preload = document.querySelector('.preload');
+    let pr = gsap.timeline({
+    });
 
-    preload.classList.add('preload-finish');
+
+    pr.to("#letter1", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }).to("#letter2", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter3", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter4", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter5", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter6", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter7", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter8", {
+        duration: 1,
+        strokeDashoffset: '0',
+
+    }, '-=1').to("#letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8", {
+        duration: 1,
+        fill: '#2C2E2F',
+
+    }).from("#logo-svg", {
+        duration: 1,
+        width: '300px',
+        height: '100px',
+
+    }, '-=1').to(".preload__logo img", {
+        duration: 1,
+        opacity: '1',
+        visibility: 'visible',
+
+    }).to(".preload__logo", {
+        duration: 1,
+        top: '0',
+        left: '0',
+        transform: 'translate(0,0)',
+        ease: "slow(0.7, 0.7, false)"
+
+
+    }).to(".preload", {
+        duration: 1,
+        opacity: 0,
+
+    }).to(".preload", {
+        duration: 1,
+        zIndex: '-100'
+
+    }, "-=0.3").from(".header__title", { duration: 1.3, ease: "power4.out", opacity: 0, x: -150 })
+        .from(".header__text", { duration: 1, ease: "power4.out", opacity: 0, x: -150 }, "-=0.85")
+        .from(".inner-header__item-1", { duration: 0.8, ease: "power4.out", opacity: 0, y: 150 }, "-=0.3")
+        .from(".inner-header__item-2", { duration: 1, ease: "power4.out", opacity: 0, y: 150 }, "-=0.4")
+        .from(".inner-header__item-3", { duration: 1.2, ease: "power4.out", opacity: 0, y: 150 }, "-=0.6")
+        .from(".header__dop", { duration: 2, ease: "power4.out", opacity: 0 }, "-=0.6")
+        .from(".header__btn", { duration: 1, ease: "power4.out", opacity: 0, y: -100 }, "-=1.3")
+
+
 
 })
+
+
+
 
 const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".scrollContainer"),
@@ -38,21 +112,25 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-let tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".header",   // pin the trigger element while active
-        scroller: ".scrollContainer",
-    }
-});
 
 
-tl.from(".header__title", { duration: 1.3, ease: "power4.out", opacity: 0, x: -150 }, "+=1.3")
-    .from(".header__text", { duration: 1, ease: "power4.out", opacity: 0, x: -150 }, "-=0.85")
-    .from(".inner-header__item-1", { duration: 0.8, ease: "power4.out", opacity: 0, y: 150 }, "-=0.3")
-    .from(".inner-header__item-2", { duration: 1, ease: "power4.out", opacity: 0, y: 150 }, "-=0.4")
-    .from(".inner-header__item-3", { duration: 1.2, ease: "power4.out", opacity: 0, y: 150 }, "-=0.6")
-    .from(".header__dop", { duration: 2, ease: "power4.out", opacity: 0 }, "-=0.6")
-    .from(".header__btn", { duration: 1, ease: "power4.out", opacity: 0, y: -100 }, "-=1.3")
+
+
+// let tl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".header",   // pin the trigger element while active
+//         scroller: ".scrollContainer",
+//     }
+// });
+
+
+// tl.from(".header__title", { duration: 1.3, ease: "power4.out", opacity: 0, x: -150 }, "+=1.3")
+//     .from(".header__text", { duration: 1, ease: "power4.out", opacity: 0, x: -150 }, "-=0.85")
+//     .from(".inner-header__item-1", { duration: 0.8, ease: "power4.out", opacity: 0, y: 150 }, "-=0.3")
+//     .from(".inner-header__item-2", { duration: 1, ease: "power4.out", opacity: 0, y: 150 }, "-=0.4")
+//     .from(".inner-header__item-3", { duration: 1.2, ease: "power4.out", opacity: 0, y: 150 }, "-=0.6")
+//     .from(".header__dop", { duration: 2, ease: "power4.out", opacity: 0 }, "-=0.6")
+//     .from(".header__btn", { duration: 1, ease: "power4.out", opacity: 0, y: -100 }, "-=1.3")
 
 
 let tl2 = gsap.timeline({
@@ -90,10 +168,11 @@ let tl4 = gsap.timeline({
     scrollTrigger: {
         trigger: ".steps__call",   // pin the trigger element while active
         scroller: ".scrollContainer",
+        start: "top 600px",
     }
 });
 
-tl4.from(".call-steps", { duration: 1.5, ease: "power4.out", opacity: 0, x: 250 }, "+=.3")
+tl4.from(".call-steps", { duration: 1, ease: "power4.out", opacity: 0, x: 250 }, "+=.3")
 
 
 
